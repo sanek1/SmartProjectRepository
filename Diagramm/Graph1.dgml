@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="BottomToTop" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="14faaa2c-2da1-4067-83ea-aa40417bf1251" Category="Comment" Bounds="-383.68375193278,-130.290076259867,205.733333333333,73.84" Label="Редактор СУС:&#xD;&#xA;выбирает xml сцену и отправляет модели&#xD;&#xA;получает изменения в сцене" UseManualLocation="True" />
+    <Node Id="SmartPhone" Category="Category9" Bounds="29.96,151.92,84.6633333333333,25.96" UseManualLocation="True" />
+    <Node Id="c03f5baf-c3d5-4163-a2dc-6fb603b207831" Category="Comment" Bounds="-378.683752644857,117.483423209063,234.703333333333,73.84" Label="Редактор СКТПС:&#xD;&#xA;контроль работы тех. и прогр. средств.&#xD;&#xA;регистрирует телефоны и сохраняет данные о них в тип данных соты" UseManualLocation="True" />
+    <Node Id="Агенты" Bounds="160.805,95.96,58.9733333333334,25.96" />
+    <Node Id="Агенты:СлужатУзламиСоты" Category="Comment" Bounds="-375.683752644857,45.4701237401326,129.226666666667,41.92" Label="агенты:&#xD;&#xA;служат узлами соты" UseManualLocation="True" />
+    <Node Id="Космоцентр" Bounds="0,0,366.088333333333,197.88" Group="Expanded" />
+    <Node Id="Модель&quot;Космопарка&quot;" Category="Category2" Bounds="118.86,40,142.863333333333,25.96" Label="Модель &quot;Космопарка&quot;" />
+    <Node Id="МодельКосмопарка:" Category="Comment" Bounds="-381.455845540365,-26.4499762598673,222.886666666667,41.92" Label="Модель космопарка: &#xD;&#xA;регистрирует изменения в сценарии" UseManualLocation="True" />
+    <Node Id="РедакторСКТПС" Category="Category9" Bounds="20,95.96,110.583333333333,25.96" Label="Редактор СКТПС" />
+    <Node Id="РедакторСУС" Bounds="250.495,95.96,95.5933333333334,25.96" Label="Редактор СУС" />
+  </Nodes>
+  <Links>
+    <Link Source="SmartPhone" Target="РедакторСКТПС" Bounds="72.9875214564224,130.907096065567,1.12649718416229,21.0130051042732" />
+    <Link Source="Агенты" Target="Модель&quot;Космопарка&quot;" Bounds="190.29167175293,74.9599990844727,0,21" />
+    <Link Source="Космоцентр" Target="SmartPhone" Category="Contains" />
+    <Link Source="Космоцентр" Target="Агенты" Category="Contains" />
+    <Link Source="Космоцентр" Target="Модель&quot;Космопарка&quot;" Category="Contains" />
+    <Link Source="Космоцентр" Target="РедакторСКТПС" Category="Contains" />
+    <Link Source="Космоцентр" Target="РедакторСУС" Category="Contains" />
+    <Link Source="РедакторСКТПС" Target="Модель&quot;Космопарка&quot;" Bounds="101.966079711914,69.8979949951172,53.5584564208984,26.0620040893555" />
+    <Link Source="РедакторСУС" Target="Модель&quot;Космопарка&quot;" Bounds="223.333419799805,70.1005249023438,49.9074859619141,25.8594741821289" />
+  </Links>
+  <Categories>
+    <Category Id="Category2" Label="Категория 2" Background="#FF339933" IsTag="True" />
+    <Category Id="Category9" Label="Категория 9" Background="#FF00539C" IsTag="True" />
+    <Category Id="Comment" Label="Комментарий" Description="Представляет собой определенный пользователем комментарий к диаграмме" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Комментарии" />
+    <Category Id="Contains" Label="Содержит" Description="Указывает, содержит ли источник связи целевой объект" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Содержится в" IsContainment="True" OutgoingActionLabel="Содержит" />
+  </Categories>
+  <Properties>
+    <Property Id="Background" Label="Фон" Description="Цвет фона" DataType="System.Windows.Media.Brush" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Группа" Description="Отображать узел как группу" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="IsTag" DataType="System.Boolean" />
+    <Property Id="Label" Label="Метка" Description="Отображаемая метка аннотируемого объекта" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Категория 9" ValueLabel="Имеет категорию">
+      <Condition Expression="HasCategory('Category9')" />
+      <Setter Property="Background" Value="#FF00539C" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Категория 1" ValueLabel="Имеет категорию">
+      <Condition Expression="HasCategory('Category1')" />
+      <Setter Property="Background" Value="#FFE51400" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Категория 2" ValueLabel="Имеет категорию">
+      <Condition Expression="HasCategory('Category2')" />
+      <Setter Property="Background" Value="#FF339933" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Комментарий" ValueLabel="Имеет комментарий">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>
