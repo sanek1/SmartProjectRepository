@@ -31,7 +31,7 @@ namespace SmartProject
 
 
             sota = new DataSota();
-
+              
             uint a = 7000;
             uint b = 500;
             _idUni = (uint)(((ulong)((uint)(a) & 0xffffffff)) | ((uint)((ulong)((uint)(b) & 0xffffffff))) << 32); 
