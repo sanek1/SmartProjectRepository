@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartProject", "SmartProject\SmartProject.csproj", "{7A98E951-FDE5-420A-ADBA-7B23EF1B6E84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diagramm", "Diagramm\Diagramm.csproj", "{7F96EFBF-1BD1-4D2D-B82A-A165E58E8B0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{9C3B8EF5-8E28-47BF-8780-6C695EF387CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartClient", "SmartClient\SmartClient.csproj", "{65A5876A-C599-4EB3-B5FE-BD5442B6076A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,12 @@ Global
 		{9C3B8EF5-8E28-47BF-8780-6C695EF387CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C3B8EF5-8E28-47BF-8780-6C695EF387CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C3B8EF5-8E28-47BF-8780-6C695EF387CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A5876A-C599-4EB3-B5FE-BD5442B6076A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
