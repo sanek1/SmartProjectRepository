@@ -26,7 +26,7 @@ namespace SmartProject
             //LoadApplication(new App());
 
 
-            //Button btn = FindViewById<Button>(Resource.Id.button1);
+            //Button btn = FindViewById<Button>(Resource.Id.button1); 
             //btn.Click += btn_Click;
 
 
