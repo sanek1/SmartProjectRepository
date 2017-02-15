@@ -7,23 +7,14 @@ namespace Diagramm
 {
     public class DLL_KTPS_Conf
     {
-        TMA_Config_MainWindow main;
+        //TMA_Config_MainWindow main;
 
         public DLL_KTPS_Conf()
         {
-            main = new TMA_Config_MainWindow();
+            //main = new TMA_Config_MainWindow();
         }
 
-        public TMA_Config_MainWindow TMA_Config_MainWindow
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+
     
         public int Init()
         {
@@ -72,7 +63,7 @@ namespace Diagramm
 
         public int ProcessChanel()
         {
-            main.UpdateWelcomePhone("name", "ip");
+            //main.UpdateWelcomePhone("name", "ip");
             return 0;
         }
 

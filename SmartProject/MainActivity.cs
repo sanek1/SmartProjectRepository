@@ -17,6 +17,7 @@ namespace SmartProject
         static ulong _idUni;
         Socket sender;
         private string ipadres = "192.168.12.33";
+        private uint fromId = 2001; //это ид приложения нужно сделать форму регистрации пользователя где он вводит я "Иванов" "КК" "Экипаж ТМА"
 
         protected override void OnCreate(Bundle bundle) 
         {
@@ -26,14 +27,14 @@ namespace SmartProject
             //LoadApplication(new App());
 
 
-            //Button btn = FindViewById<Button>(Resource.Id.button1);
-            //btn.Click += btn_Click;
+            Button btn = FindViewById<Button>(Resource.Id.button1);
+            btn.Click += btn_Click;
 
 
             sota = new DataSota();
               
-            uint a = 7000;
-            uint b = 500;
+            uint a = 7000;          //это id формата КТПС 
+            uint b = fromId;           //это ид приложения нужно сделать форму регистрации пользователя где он вводит я "Иванов" "КК" "Экипаж ТМА"
             _idUni = (uint)(((ulong)((uint)(a) & 0xffffffff)) | ((uint)((ulong)((uint)(b) & 0xffffffff))) << 32); 
 
         }
@@ -50,12 +51,15 @@ namespace SmartProject
                 char[] Text2 = new char[256];       //формируем welcome пакет
                 string name = "Иванов Иван";        //формируем welcome пакет 
                 string ip = ipadres;        //формируем welcome пакет
+
+                //byte[] bytes = Encoding.Default.GetBytes(name);
+                //string test = Encoding.UTF8.GetString(bytes);
+
+
                 name.CopyTo(0, Text, 0, name.Length);  //формируем welcome пакет
-                ip.CopyTo(0, Text2, 0, ip.Length);     //формируем welcome пакет
-                //for (int i = 0; i < name.Length; i++)
-                //{
-                //    Text[i] = name.ToCharArray()[i];
-                //}
+                ip.CopyTo(0, Text2, 0, ip.Length);     //формируем welcome пакет 
+
+                
 
 
                 Text[255] = '0';                    //формируем welcome пакет
@@ -70,7 +74,7 @@ namespace SmartProject
                 pac.pack = 0;
                 pac.size = 520;
                 pac.packsize = 520;//Marshal.SizeOf(welcome);
-                pac.fromind = 2001;
+                pac.fromind = fromId;
                 #endregion
 
                 byte[] arr = sota.StructToBytes(pac);           //переводим стуктуру шапки в последовательность байт

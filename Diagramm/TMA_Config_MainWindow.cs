@@ -7,16 +7,7 @@ namespace Diagramm
 {
     public class TMA_Config_MainWindow
     {
-        public WrapperWPF_Config WrapperWPF_Config
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+
     
         public void MainWindow()
         {

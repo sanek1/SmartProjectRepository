@@ -6,19 +6,13 @@
       <HashCode>AAAAAAAAAAABAAAAAAAEEQAIAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>TMA_Config_MainWindow.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="WrapperWPF_Config" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Diagramm.DLL_KTPS_Conf">
     <Position X="9.5" Y="3.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AABAgAgAAAAABAAABAAAAAAAAAAFIAIAQAACAAAAAAQ=</HashCode>
+      <HashCode>AABAgAgAAAAABAAABAAAAAAAAAAFIAIAAAACAAAAAAQ=</HashCode>
       <FileName>DLL_KTPS_Conf.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="TMA_Config_MainWindow" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Diagramm.WrapperWPF_Config">
     <Position X="13.25" Y="3.25" Width="1.5" />
