@@ -1,2 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Diagramm.TMA_Config_MainWindow">
+    <Position X="13.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAEEQAIAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TMA_Config_MainWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diagramm.DLL_KTPS_Conf">
+    <Position X="9.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAgAgAAAAABAAABAAAAAAAAAAFIAIAAAACAAAAAAQ=</HashCode>
+      <FileName>DLL_KTPS_Conf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diagramm.WrapperWPF_Config">
+    <Position X="13.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WrapperWPF_Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diagramm.SmartProject_MainActivity">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartProject_MainActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

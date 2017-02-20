@@ -46,6 +46,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DLL_KTPS_Conf.cs" />
+    <Compile Include="SmartProject_MainActivity.cs" />
+    <Compile Include="TMA_Config_MainWindow.cs" />
+    <Compile Include="WrapperWPF_Config.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

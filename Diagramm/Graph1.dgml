@@ -2,26 +2,61 @@
 <DirectedGraph GraphDirection="BottomToTop" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
     <Node Id="14faaa2c-2da1-4067-83ea-aa40417bf1251" Category="Comment" Bounds="-383.68375193278,-130.290076259867,205.733333333333,73.84" Label="Редактор СУС:&#xD;&#xA;выбирает xml сцену и отправляет модели&#xD;&#xA;получает изменения в сцене" UseManualLocation="True" />
-    <Node Id="SmartPhone" Category="Category9" Bounds="29.96,151.92,84.6633333333333,25.96" UseManualLocation="True" />
+    <Node Id="DLL_Agent" Bounds="105.798230534938,164.224897271662,76.6298013352458,25.9599999998169" Label="DLL_Agent" />
+    <Node Id="DLL_KTPS_Conf" Bounds="254.603131202561,164.224897271512,101.02,25.96" />
+    <Node Id="DLL_kosmopark" Bounds="92.3914645358943,-63.6551027284292,103.443333333333,25.96" Label="DLL_kosmopark" />
+    <Node Id="Dll_EditroSUS" Bounds="-60.641868797439,164.224897271571,91.51,25.96" Label="Dll_EditroSUS" />
+    <Node Id="EditroSUS" Bounds="-51.0385354641057,108.264897271571,72.3033333333333,25.96" />
+    <Node Id="SmartClient" Category="Category9" Bounds="406.396464535894,98.2648972715708,81.4333333333333,25.96" />
+    <Node Id="SmartEditro" Category="Category9" Bounds="517.928131202561,98.2648972715708,82.37,25.96" />
+    <Node Id="SmartPhone" Category="Category9" Bounds="404.781464535894,256.144897271571,84.6633333333333,25.96" />
+    <Node Id="TMA_Config" Bounds="262.72981205622,108.264897271629,84.7666382926823,25.9599999998828" Label="TMA_Config" />
+    <Node Id="WPFAgetnt" Bounds="104.214797869228,108.264897271662,79.7966666666667,25.96" />
+    <Node Id="Wrapper" Bounds="272.089797869228,52.3048972716295,66.0466666666667,25.96" />
+    <Node Id="Wrapper1" Bounds="111.089797869228,52.3048972716624,66.0466666666667,25.96" Label="Wrapper" />
+    <Node Id="WrapperEditro" Bounds="-63.566868797439,52.3048972715708,97.36,25.96" />
     <Node Id="c03f5baf-c3d5-4163-a2dc-6fb603b207831" Category="Comment" Bounds="-378.683752644857,117.483423209063,234.703333333333,73.84" Label="Редактор СКТПС:&#xD;&#xA;контроль работы тех. и прогр. средств.&#xD;&#xA;регистрирует телефоны и сохраняет данные о них в тип данных соты" UseManualLocation="True" />
-    <Node Id="Агенты" Bounds="160.805,95.96,58.9733333333334,25.96" />
+    <Node Id="e8ea2a94-8f4a-44c3-b3c9-b444f41a832a1" Category="Comment" Bounds="147.626464535894,240.184897271571,226.973333333333,57.88" Label="Регистрирует телефоны и отправляет модели космопарка если отключится сообщит модели" />
+    <Node Id="Агенты" Bounds="84.2147978692276,12.3048972716624,119.796666666667,197.879999999817" Group="Expanded" />
     <Node Id="Агенты:СлужатУзламиСоты" Category="Comment" Bounds="-375.683752644857,45.4701237401326,129.226666666667,41.92" Label="агенты:&#xD;&#xA;служат узлами соты" UseManualLocation="True" />
-    <Node Id="Космоцентр" Bounds="0,0,366.088333333333,197.88" Group="Expanded" />
-    <Node Id="Модель&quot;Космопарка&quot;" Category="Category2" Bounds="118.86,40,142.863333333333,25.96" Label="Модель &quot;Космопарка&quot;" />
+    <Node Id="Космоцентр" Bounds="-103.566868797439,-143.655102728429,723.865,461.72" Group="Expanded" />
+    <Node Id="Модель&quot;Космопарка&quot;" Category="Category2" Bounds="62.6814645358943,-103.655102728429,162.863333333333,85.96" Group="Expanded" Label="Модель &quot;Космопарка&quot;" />
     <Node Id="МодельКосмопарка:" Category="Comment" Bounds="-381.455845540365,-26.4499762598673,222.886666666667,41.92" Label="Модель космопарка: &#xD;&#xA;регистрирует изменения в сценарии" UseManualLocation="True" />
-    <Node Id="РедакторСКТПС" Category="Category9" Bounds="20,95.96,110.583333333333,25.96" Label="Редактор СКТПС" />
-    <Node Id="РедакторСУС" Bounds="250.495,95.96,95.5933333333334,25.96" Label="Редактор СУС" />
+    <Node Id="РедакторСКТПС" Category="Category9" Bounds="234.603131202561,12.3048972716295,141.02,197.879999999883" Group="Expanded" Label="Редактор СКТПС" />
+    <Node Id="РедакторСУС" Bounds="-83.566868797439,12.3048972715708,137.36,197.88" Group="Expanded" Label="Редактор СУС" />
   </Nodes>
   <Links>
-    <Link Source="SmartPhone" Target="РедакторСКТПС" Bounds="72.9875214564224,130.907096065567,1.12649718416229,21.0130051042732" />
-    <Link Source="Агенты" Target="Модель&quot;Космопарка&quot;" Bounds="190.29167175293,74.9599990844727,0,21" />
+    <Link Source="DLL_Agent" Target="WPFAgetnt" Bounds="144.113128662109,143.224899291992,0,21" />
+    <Link Source="DLL_KTPS_Conf" Target="TMA_Config" Bounds="305.113128662109,143.224899291992,0,21" />
+    <Link Source="Dll_EditroSUS" Target="EditroSUS" Bounds="-14.8868684768677,143.224899291992,0,21" />
+    <Link Source="EditroSUS" Target="WrapperEditro" Bounds="-14.8868684768677,87.2649002075195,0,21" />
+    <Link Source="SmartPhone" Target="SmartClient" Bounds="447.113128662109,133.224899291992,0,122.919998168945" />
+    <Link Source="SmartPhone" Target="SmartEditro" Bounds="456.321136474609,131.5654296875,88.3766174316406,124.579467773438" />
+    <Link Source="SmartPhone" Target="РедакторСКТПС" Bounds="381.641662597656,196.331680297852,53.7970275878906,59.8132171630859" />
+    <Link Source="TMA_Config" Target="Wrapper" Bounds="305.113128662109,87.2649002075195,0,21" />
+    <Link Source="WPFAgetnt" Target="Wrapper1" Bounds="144.113128662109,87.2649002075195,0,21" />
+    <Link Source="e8ea2a94-8f4a-44c3-b3c9-b444f41a832a1" Target="РедакторСКТПС" Bounds="269.178497314453,218.854507446289,5.94461059570313,21.3303833007813" />
+    <Link Source="Агенты" Target="DLL_Agent" Category="Contains" />
+    <Link Source="Агенты" Target="WPFAgetnt" Category="Contains" />
+    <Link Source="Агенты" Target="Wrapper1" Category="Contains" />
+    <Link Source="Агенты" Target="Модель&quot;Космопарка&quot;" Bounds="144.113128662109,-8.69510269165039,0,21" />
+    <Link Source="Космоцентр" Target="SmartClient" Category="Contains" />
+    <Link Source="Космоцентр" Target="SmartEditro" Category="Contains" />
     <Link Source="Космоцентр" Target="SmartPhone" Category="Contains" />
+    <Link Source="Космоцентр" Target="e8ea2a94-8f4a-44c3-b3c9-b444f41a832a1" Category="Contains" />
     <Link Source="Космоцентр" Target="Агенты" Category="Contains" />
     <Link Source="Космоцентр" Target="Модель&quot;Космопарка&quot;" Category="Contains" />
     <Link Source="Космоцентр" Target="РедакторСКТПС" Category="Contains" />
     <Link Source="Космоцентр" Target="РедакторСУС" Category="Contains" />
-    <Link Source="РедакторСКТПС" Target="Модель&quot;Космопарка&quot;" Bounds="101.966079711914,69.8979949951172,53.5584564208984,26.0620040893555" />
-    <Link Source="РедакторСУС" Target="Модель&quot;Космопарка&quot;" Bounds="223.333419799805,70.1005249023438,49.9074859619141,25.8594741821289" />
+    <Link Source="Модель&quot;Космопарка&quot;" Target="DLL_kosmopark" Category="Contains" />
+    <Link Source="РедакторСКТПС" Target="DLL_KTPS_Conf" Category="Contains" />
+    <Link Source="РедакторСКТПС" Target="TMA_Config" Category="Contains" />
+    <Link Source="РедакторСКТПС" Target="Wrapper" Category="Contains" />
+    <Link Source="РедакторСКТПС" Target="Модель&quot;Космопарка&quot;" Bounds="190.515045166016,-11.1259326934814,44.0880889892578,47.0784130096436" />
+    <Link Source="РедакторСУС" Target="Dll_EditroSUS" Category="Contains" />
+    <Link Source="РедакторСУС" Target="EditroSUS" Category="Contains" />
+    <Link Source="РедакторСУС" Target="WrapperEditro" Category="Contains" />
+    <Link Source="РедакторСУС" Target="Модель&quot;Космопарка&quot;" Bounds="53.7931327819824,-11.0877094268799,44.459156036377,48.0718173980713" />
   </Links>
   <Categories>
     <Category Id="Category2" Label="Категория 2" Background="#FF339933" IsTag="True" />
