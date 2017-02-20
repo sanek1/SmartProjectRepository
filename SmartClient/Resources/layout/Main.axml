@@ -3,16 +3,63 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-  <Button
-      android:text="Button"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/button1" />
-  <Button
-      android:text="Button2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/button2" />
+    android:background="#11466f">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layoutContainer"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25" />
+        <LinearLayout
+            android:layout_width="0dip"
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5">
+            <TextView
+                android:text="Меню"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:layout_margin="10dp" />
+            <Button
+                android:text="Подключение"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/butConnect"
+                android:background="#0a8f6b"
+                android:layout_margin="5dp" />
+            <Button
+                android:text="ФТМА"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/butnav"
+                android:onClick="butNavigate"
+                android:background="#0a8f6b"
+                android:layout_margin="5dp" />
+            <Button
+                android:text="Настройки"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/butsettings"
+                android:onClick="butSet_Click"
+                android:background="#0a8f6b"
+                android:layout_margin="5dp" />
+            <Button
+                android:text="Выход"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/butexit"
+                android:onClick="butExit_Click"
+                android:background="#0a8f6b"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25" />
+    </LinearLayout>
 </LinearLayout>

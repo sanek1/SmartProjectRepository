@@ -45,7 +45,16 @@ namespace SmartClient
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ComputerOff = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int ComputerOn = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int PoOn = 2130837507;
 			
 			static Drawable()
 			{
@@ -60,11 +69,41 @@ namespace SmartClient
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int button1 = 2131034112;
-			
 			// aapt resource value: 0x7f050001
-			public const int button2 = 2131034113;
+			public const int butBack = 2131034113;
+			
+			// aapt resource value: 0x7f050008
+			public const int butConnect = 2131034120;
+			
+			// aapt resource value: 0x7f05000b
+			public const int butexit = 2131034123;
+			
+			// aapt resource value: 0x7f050009
+			public const int butnav = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int butsettings = 2131034122;
+			
+			// aapt resource value: 0x7f050003
+			public const int imgComputer1 = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int imgComputer2 = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int imgComputer3 = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int layoutContainer = 2131034119;
+			
+			// aapt resource value: 0x7f050000
+			public const int linearlayout1 = 2131034112;
+			
+			// aapt resource value: 0x7f050004
+			public const int switchComp1 = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int tv1 = 2131034114;
 			
 			static Id()
 			{
@@ -80,7 +119,13 @@ namespace SmartClient
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int layout1 = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int settings = 2130903042;
 			
 			static Layout()
 			{

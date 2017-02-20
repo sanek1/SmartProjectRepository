@@ -8,6 +8,7 @@ using System.Threading;
 using System.Net;
 using System.Text;
 using System.Net.NetworkInformation;
+using Android.Views;
 
 namespace SmartClient
 {
@@ -18,17 +19,21 @@ namespace SmartClient
         static ulong _idUni;
         Socket sender;
         string inputdata = "";
+        private const string ip = "192.168.12.79";
+        private const int port = 25113;
+        bool bComp1ON = false;
+        bool bPo1ON = false;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
 
-            Button btn = FindViewById<Button>(Resource.Id.button1);
+            Button btn = FindViewById<Button>(Resource.Id.butConnect);
             btn.Click += btn_Click;
 
-            Button btn2 = FindViewById<Button>(Resource.Id.button2);
-            btn2.Click += btn2_Click;
+ 
 
             sota = new DataSota();
 
@@ -46,7 +51,6 @@ namespace SmartClient
                 char[] Text = new char[256];        //формируем welcome пакет
                 char[] Text2 = new char[256];       //формируем welcome пакет
                 string name = "Иванов Иван";        //формируем welcome пакет
-                string ip = "192.168.12.79";        //формируем welcome пакет
                 name.CopyTo(0, Text, 0, name.Length);  //формируем welcome пакет
                 ip.CopyTo(0, Text2, 0, ip.Length);     //формируем welcome пакет
                 Text[255] = '0';                    //формируем welcome пакет
@@ -67,7 +71,7 @@ namespace SmartClient
                 byte[] arr = sota.StructToBytes(pac);           //переводим стуктуру шапки в последовательность байт
                 byte[] arr2 = sota.StructToBytes2(welcome);     //переводим welcome
 
-                Socket(25113, arr, arr2);
+                Socket(port, arr, arr2);
 
 
             }
@@ -81,11 +85,98 @@ namespace SmartClient
             }
         }
 
+        private void btnnav_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.layout1);
+        }
+
+        [Java.Interop.Export("butSet_Click")]
+        public void butSet_Click(View v)
+        {
+            SetContentView(Resource.Layout.settings);
+        }
+
+        [Java.Interop.Export("butExit_Click")]
+        public void butExit_Click(View v)
+        {
+            System.Environment.Exit(0);
+        }
+
+        [Java.Interop.Export("switchComp_Click")]
+
+        public void switchComp_Click(View v)
+        {
+
+            DataSota.TSOTAKOSMOPARKMESAGEANDROID tsota = new DataSota.TSOTAKOSMOPARKMESAGEANDROID();
+
+            DataSota.TsotaPaket pac = new DataSota.TsotaPaket();
+            pac.uni = long.Parse("8642106494615744221");
+            pac.typemes = 5101;
+            pac.pack = 0;
+            pac.size = Marshal.SizeOf(tsota);
+            pac.packsize = Marshal.SizeOf(tsota);
+            pac.fromind = 2001;
+            tsota.Index = 702;
+            tsota.Type = 3;
+
+            byte[] arr = sota.StructToBytes(pac);
+            byte[] arr2 = sota.StructToBytes4(tsota);
+
+            // Устанавливаем удаленную точку для сокета
+            IPAddress ipAddr = IPAddress.Parse(ip);
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
+
+            sender = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+            // Соединяем сокет с удаленной точкой
+            sender.Connect(ipEndPoint);
+
+            // Отправляем данные через сокет
+            int bytesSent = sender.Send(arr);
+            int bytesSent2 = sender.Send(arr2);
+
+            ImageView qImageView = FindViewById<ImageView>(Resource.Id.imgComputer1);
+
+            if (bComp1ON) qImageView.SetImageResource(Resource.Drawable.ComputerOff);
+            else qImageView.SetImageResource(Resource.Drawable.ComputerOn);
+
+            bComp1ON = !bComp1ON;
+
+        }
+
+        [Java.Interop.Export("switchPo_Click")]
+
+        public void switchPo_Click(View v)
+        {
+
+            ImageView qImageView = FindViewById<ImageView>(Resource.Id.imgComputer1);
+
+            if (bPo1ON) qImageView.SetImageResource(Resource.Drawable.ComputerOff);
+            else qImageView.SetImageResource(Resource.Drawable.PoOn);
+
+            bPo1ON = !bPo1ON;
+        }
+
+
+        [Java.Interop.Export("butBack_Click")]
+
+        public void butBack_Click(View v)
+        {
+            SetContentView(Resource.Layout.Main);
+        }
+
+        [Java.Interop.Export("butNavigate")]
+
+        public void butNavigate(View v)
+        {
+            SetContentView(Resource.Layout.layout1);
+        }
+
         void CheckConnection()
         {
             int timeout = 100;
             Ping ping = new Ping();
-            PingReply reply = ping.Send("192.168.12.79", timeout);
+            PingReply reply = ping.Send(ip, timeout);
 
             if (reply != null && reply.Status == IPStatus.Success)
                 this.RunOnUiThread(() => {
@@ -98,11 +189,11 @@ namespace SmartClient
                 });
         }
 
-        private void btn2_Click(object sender, System.EventArgs e)
-        {
-            Button btn2 = FindViewById<Button>(Resource.Id.button2);
-            btn2.Text = inputdata;
-        }
+        //private void btn2_Click(object sender, System.EventArgs e)
+        //{
+        //    Button btn2 = FindViewById<Button>(Resource.Id.button2);
+        //    btn2.Text = inputdata;
+        //}
 
 
         //утанавливаем связь шлем welcome 
@@ -129,7 +220,6 @@ namespace SmartClient
             char[] Text = new char[256];        //формируем welcome пакет
             char[] Text2 = new char[256];       //формируем welcome пакет
             string name = "Иванов Иван";        //формируем welcome пакет
-            string ip = "192.168.12.79";        //формируем welcome пакет
             name.CopyTo(0, Text, 0, name.Length);  //формируем welcome пакет
             ip.CopyTo(0, Text2, 0, ip.Length);     //формируем welcome пакет
             Text[255] = '0';                    //формируем welcome пакет
@@ -151,8 +241,8 @@ namespace SmartClient
             byte[] arr2 = sota.StructToBytes2(welcome);     //переводим welcome
 
             // Устанавливаем удаленную точку для сокета
-            IPAddress ipAddr = IPAddress.Parse("192.168.12.79");//ipHost.AddressList[0]; 
-            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, 25113);
+            IPAddress ipAddr = IPAddress.Parse(ip);//ipHost.AddressList[0]; 
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
 
             CheckConnection();
 
@@ -188,8 +278,8 @@ namespace SmartClient
             byte[] arr2 = sota.StructToBytes4(tsota);
 
             // Устанавливаем удаленную точку для сокета
-            IPAddress ipAddr = IPAddress.Parse("192.168.12.79");
-            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, 25113);
+            IPAddress ipAddr = IPAddress.Parse(ip);
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
 
             sender = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayout1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#11466f">
+    <Button
+        android:text="Назад"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="butBack_Click"
+        android:id="@+id/butBack"
+        android:background="#0a8f6b"
+        android:layout_margin="5dp" />
+    <TextView
+        android:text=" ФТМА"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="5dp">
+            <ImageView
+                android:id="@+id/imgComputer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ComputerOff"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:text="БИ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv1"
+                android:textSize="16dp"
+                android:gravity="center" />
+            <Switch
+                android:id="@+id/switchComp1"
+                android:text="Компьютер"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:onClick="switchComp_Click"
+                android:layout_marginTop="10dp" />
+            <Switch
+                android:text="ПО"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:onClick="switchPo_Click"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="5dp">
+            <ImageView
+                android:id="@+id/imgComputer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ComputerOff"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:text="КК"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv1"
+                android:textSize="16dp"
+                android:gravity="center" />
+            <Switch
+                android:text="Компьютер"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:layout_marginTop="10dp" />
+            <Switch
+                android:text="ПО"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgComputer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ComputerOff"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:text="КИ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv1"
+                android:textSize="16dp"
+                android:gravity="center" />
+            <Switch
+                android:text="Компьютер"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:layout_marginTop="10dp" />
+            <Switch
+                android:text="ПО"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="Off"
+                android:textOn="On"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </GridLayout>
+</LinearLayout>
