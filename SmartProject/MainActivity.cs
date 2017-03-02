@@ -165,8 +165,8 @@ namespace SmartProject
 
                             //uia
 
-                            Button btn = FindViewById<Button>(Resource.Id.button1);
-                            btn.Text = "43333";
+                            //Button btn = FindViewById<Button>(Resource.Id.button1);
+                            //btn.Text = "43333";
 
                         }
 
@@ -186,6 +186,52 @@ namespace SmartProject
             // Освобождаем сокет
             sender.Shutdown(SocketShutdown.Both);
             sender.Close();
+            Finish();
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+        }
+
+        public override void OnBackPressed()
+        {
+            try
+            {
+
+                #region welcome пакет
+                char[] Text = new char[256];        //формируем welcome пакет
+                char[] Text2 = new char[256];       //формируем welcome пакет
+                string name = "Иванов Иван";        //формируем welcome пакет 
+                string ip = ipadres;        //формируем welcome пакет
+
+                name.CopyTo(0, Text, 0, name.Length);  //формируем welcome пакет
+                ip.CopyTo(0, Text2, 0, ip.Length);     //формируем welcome пакет 
+
+                
+                Text[255] = '0';                    //формируем welcome пакет
+                Text2[255] = '0';                   //формируем welcome пакет
+                DataSota.TsotaWelcomeq welcome = new DataSota.TsotaWelcomeq(_idUni, Text, Text2);
+                #endregion
+
+                #region шапка
+                DataSota.TsotaPaket pac = new DataSota.TsotaPaket();
+                pac.uni = long.Parse("8642106494615744221");
+                pac.typemes = 21;
+                pac.pack = 0;
+                pac.size = 520;
+                pac.packsize = 520;//Marshal.SizeOf(welcome);
+                pac.fromind = fromId;
+                #endregion
+
+                byte[] arr = sota.StructToBytes(pac);           //переводим стуктуру шапки в последовательность байт
+                byte[] arr2 = sota.StructToBytes2(welcome);     //переводим welcome
+
+                Socket(25113, arr, arr2);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+            }
+
+            //Finish();
+            //Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
         }
 
         //функция перевода из массива байтов в структуру TsotaPaket 
