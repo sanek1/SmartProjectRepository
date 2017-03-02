@@ -10,6 +10,7 @@ using TestSmartProject;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Net.Sockets;
+using System.Linq;
 
 namespace TestSmartProject.ViewModel
 {
@@ -91,7 +92,7 @@ namespace TestSmartProject.ViewModel
         private void ConnectSota()
         {
             _idUni = 88;
-            ConnectSota sonnect = new ConnectSota(2001, "192.168.12.33", "TEST", ref _idUni);
+            ConnectSota sonnect = new ConnectSota(2001, "192.168.12." + Users.ToArray()[0].IpAdress, Users.ToArray()[0].Name, ref _idUni);
             sender = sonnect.SendWelcome();
             //функция ожидает ответа от соты и повторяется рекурсией пока тип сообщения не будет 21
             Thread receiveThread = new Thread(new ThreadStart(SendMessageFromSocket));
