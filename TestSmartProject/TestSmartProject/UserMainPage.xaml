@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TestSmartProject.UserMainPage" Title="Информация о пользователе">
+
+    <StackLayout>
+      <StackLayout x:Name="friendStack">
+        <Label Text="Имя" />
+        <Entry Text="{Binding Name}" FontSize="Medium" />
+        <Label Text="Ip адресс 192.168.12.** " />
+        <Entry Text="{Binding IpAdress}" FontSize="Medium" />
+        <Label Text="группа 1- тма" />
+        <Entry Text="{Binding Group}" FontSize="Medium" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Button Text="Добавить" Command="{Binding ListViewModel.SaveUserCommand}" CommandParameter="{Binding}" />
+        <Button Text="Удалить" Command="{Binding ListViewModel.DeleteUserCommand}" CommandParameter="{Binding}" />
+        <Button Text="Назад" Command="{Binding Path=ListViewModel.BackCommand}" />
+      </StackLayout>
+    </StackLayout>
+</ContentPage>
