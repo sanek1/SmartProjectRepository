@@ -16,6 +16,8 @@ namespace SmartClient
     public class DataSota
     {
 
+        public static string chooseTrainer;
+
         public struct TsotaPaket
         {
             public long uni;
