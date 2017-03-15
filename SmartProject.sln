@@ -19,6 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSmartProject.iOS", "Tes
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TestSmartProject\TestSmartProject\TestSmartProject.projitems*{c8b74254-6c72-404c-b99a-07ccf112d9c9}*SharedItemsImports = 4
 		TestSmartProject\TestSmartProject\TestSmartProject.projitems*{894d3a05-1831-4e15-8f47-223d4f7ebb4e}*SharedItemsImports = 13
 		TestSmartProject\TestSmartProject\TestSmartProject.projitems*{555cc1f6-d9e0-4b1c-adf6-c8aae00ffe47}*SharedItemsImports = 4
 	EndGlobalSection

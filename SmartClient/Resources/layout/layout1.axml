@@ -78,15 +78,17 @@
                 android:text="КК"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv1"
+                android:id="@+id/tv2"
                 android:textSize="16dp"
                 android:gravity="center" />
             <Switch
                 android:text="Компьютер"
+                android:id="@+id/switchComp2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textOff="Off"
                 android:textOn="On"
+                android:onClick="switchComp2_Click"
                 android:layout_marginTop="10dp" />
             <Switch
                 android:text="ПО"
@@ -94,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:textOff="Off"
                 android:textOn="On"
+                android:onClick="switchPo2_Click"
                 android:layout_marginTop="10dp" />
         </LinearLayout>
         <LinearLayout
@@ -110,7 +113,7 @@
                 android:text="КИ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv1"
+                android:id="@+id/tv3"
                 android:textSize="16dp"
                 android:gravity="center" />
             <Switch
