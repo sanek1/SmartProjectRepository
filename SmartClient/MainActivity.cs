@@ -9,10 +9,15 @@ using System.Net;
 using System.Text;
 using System.Net.NetworkInformation;
 using Android.Views;
+using Android.Support.V7.App;
+using System.Collections.Generic;
+using Android.Content;
+using Android.Text;
 
 namespace SmartClient
 {
     [Activity(Label = "SmartClient", MainLauncher = true, Icon = "@drawable/icon")]
+
     public class MainActivity : Activity
     {
         DataSota sota;
@@ -23,26 +28,62 @@ namespace SmartClient
         private const int port = 25113;
         bool bComp1ON = false;
         bool bPo1ON = false;
+        //ExpandableListViewAdapter mAdapter;
+        //ExpandableListView expandableListView;
+        List<string> group = new List<string>();
+        Dictionary<string, List<string>> dicMyMap = new Dictionary<string, List<string>>();
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.login);
+
+            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1);
+
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner1_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.trenage_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = adapter;
+
+            
+
+              
+                //expandableListView = FindViewById<ExpandableListView>(Resource.Id.listTrainers);
+                //SetData(out mAdapter);
+                //expandableListView.SetAdapter(mAdapter);
 
 
-            Button btn = FindViewById<Button>(Resource.Id.butConnect);
-            btn.Click += btn_Click;
-
- 
-
-            sota = new DataSota();
+                sota = new DataSota();
 
             uint a = 7000;
             uint b = 500;
             _idUni = (uint)(((ulong)((uint)(a) & 0xffffffff)) | ((uint)((ulong)((uint)(b) & 0xffffffff))) << 32);
         }
+
+       
+
+        private void spinner1_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            
+        }
+
+        private void SetData(out ExpandableListViewAdapter mAdapter)
+        {
+            List<string> groupA = new List<string>();
+            groupA.Add("ФТМА");
+            groupA.Add("ВТМА");
+            groupA.Add("ВМКС");
+            group.Add("Выберите тренажер");
+            dicMyMap.Add(group[0], groupA);
+
+            mAdapter = new ExpandableListViewAdapter(this, group, dicMyMap);
+        }
+
+        [Java.Interop.Export("butConnect_Click")]
         //Коннект
-        private void btn_Click(object sender, System.EventArgs e)
+        public void btn_Click(View v)
         {
             try
             {
@@ -170,6 +211,14 @@ namespace SmartClient
         public void butNavigate(View v)
         {
             SetContentView(Resource.Layout.layout1);
+        }
+
+        [Java.Interop.Export("butEnter_Click")]
+        public void butEnter_Click(View v)
+        {
+            if (FindViewById<EditText>(Resource.Id.editTextSurname).Text.Length < 1) FindViewById<EditText>(Resource.Id.editTextSurname).SetBackgroundColor(Android.Graphics.Color.LightSteelBlue);
+            else if (FindViewById<EditText>(Resource.Id.editTextName).Text.Length < 1) FindViewById<EditText>(Resource.Id.editTextName).SetBackgroundColor(Android.Graphics.Color.LightSteelBlue);
+            else SetContentView(Resource.Layout.Main);
         }
 
         void CheckConnection()
@@ -379,6 +428,8 @@ namespace SmartClient
             handle.Free();
             return sotaPaket;
         }
+
+        
     }
 }
 

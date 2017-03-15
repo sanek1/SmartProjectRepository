@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#11466f">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layoutContainer"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25" />
+        <LinearLayout
+            android:layout_width="0dip"
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5">
+            <TextView
+                android:text="Вход"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:layout_margin="10dp" />
+            <TextView
+                android:text="Введите фамилию"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_margin="10dp" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextSurname" />
+            <TextView
+                android:text="Введите имя"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_margin="10dp" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextName" />
+           
+            <TextView
+                android:text="Выберите тренажер"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:id="@+id/ChooseTrainer" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/trenage_prompt"
+                android:id="@+id/spinner1" />
+          <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:id="@+id/ChooseTrainer" />
+            <Button
+                android:text="Войти"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/butent"
+                android:onClick="butEnter_Click"
+                android:background="#0a8f6b"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25" />
+    </LinearLayout>
+</LinearLayout>

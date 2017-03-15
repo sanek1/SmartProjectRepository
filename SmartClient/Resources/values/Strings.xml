@@ -2,4 +2,11 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">SmartClient</string>
+    <string name="trenage_prompt">Выберите тренажер</string>
+    <string-array name="trenage_array">
+      <item>ФТМА</item>
+      <item>ВТМА</item>
+      <item>ВМКС</item>
+      <item>ВЦУП</item>
+    </string-array>
 </resources>

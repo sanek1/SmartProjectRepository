@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/butConnect"
+                android:onClick="butConnect_Click"
                 android:background="#0a8f6b"
                 android:layout_margin="5dp" />
             <Button
