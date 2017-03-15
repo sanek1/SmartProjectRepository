@@ -185,6 +185,20 @@ namespace SmartClient
 
         }
 
+        [Java.Interop.Export("switchComp2_Click")]
+
+        public void switchComp2_Click(View v)
+        {
+
+            ImageView qImageView = FindViewById<ImageView>(Resource.Id.imgComputer2);
+
+            if (bComp1ON) qImageView.SetImageResource(Resource.Drawable.ComputerOff);
+            else qImageView.SetImageResource(Resource.Drawable.ComputerOn);
+
+            bComp1ON = !bComp1ON;
+
+        }
+
         [Java.Interop.Export("switchPo_Click")]
 
         public void switchPo_Click(View v)
@@ -198,6 +212,18 @@ namespace SmartClient
             bPo1ON = !bPo1ON;
         }
 
+        [Java.Interop.Export("switchPo2_Click")]
+
+        public void switchPo2_Click(View v)
+        {
+
+            ImageView qImageView = FindViewById<ImageView>(Resource.Id.imgComputer2);
+
+            if (bPo1ON) qImageView.SetImageResource(Resource.Drawable.ComputerOff);
+            else qImageView.SetImageResource(Resource.Drawable.PoOn);
+
+            bPo1ON = !bPo1ON;
+        }
 
         [Java.Interop.Export("butBack_Click")]
 
