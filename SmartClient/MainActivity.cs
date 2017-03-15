@@ -19,7 +19,7 @@ namespace SmartClient
         static ulong _idUni;
         Socket sender;
         string inputdata = "";
-        private const string ip = "192.168.12.79";
+        private const string ip = "192.168.12.33";
         private const int port = 25113;
         bool bComp1ON = false;
         bool bPo1ON = false;

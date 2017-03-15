@@ -16,6 +16,8 @@ namespace TestSmartProject.ViewModel
 {
     public class ListViewMainPage : INotifyPropertyChanged
     {
+        private string _logging = "";
+
         Socket sender;
         private ulong _idUni;
         public ObservableCollection<ViewModelMainPage> Users { get; set; }
@@ -111,7 +113,7 @@ namespace TestSmartProject.ViewModel
             }
         }
         //функция ожидает ответа от соты и повторяется рекурсией пока тип сообщения не будет 21 
-        public void SendMessageFromSocket()
+        public async void SendMessageFromSocket()
         {
             // Буфер для входящих данных
             byte[] bytes = new byte[600];
@@ -139,6 +141,11 @@ namespace TestSmartProject.ViewModel
                         {
 
                             //var str = ByteArrayToNewStruct(bytes);  //функция перевода из массива байтов в структуру TsotaPaket 
+                            ////**********************////
+                            _logging += "id совпадают ";
+                            await DependencyService.Get<ILogFile>().SaveTextAsync("test.txt", _logging );
+                            UpdateFileList();
+                            ////**********************////
 
                             byte[] byteMess = new byte[paket.packsize];         //создаем новый буфер
                             Array.Copy(bytes, 32, byteMess, 0, paket.packsize); //копируем оставшиеся байты 
@@ -156,15 +163,33 @@ namespace TestSmartProject.ViewModel
                                 }
                                 count++;
                             }
-
+                            ////**********************////
+                            _logging += "выделили новый буфер  ";
+                            await DependencyService.Get<ILogFile>().SaveTextAsync("test.txt", _logging );
+                            UpdateFileList();
+                            ////**********************////
 
                             //char aa= BitConverter.ToChar(byteMess,32);
                             Encoding dec = Encoding.GetEncoding(1251);
 
-                            char[] bb = new char[count-1];
+                            char[] bb = new char[count];
                             int q = dec.GetChars(mess, 0, count-1, bb, 0);
                             string asciiString = new string(bb);
+
+                            ////**********************////
+                            _logging += "выделили новое сообщение ";
+                            await DependencyService.Get<ILogFile>().SaveTextAsync("test.txt", _logging);
+                            UpdateFileList();
+                            ////**********************////
+
                             Message = asciiString;
+
+                            ////**********************////
+                            _logging += "биндинг ";
+                            await DependencyService.Get<ILogFile>().SaveTextAsync("test.txt", _logging );
+                            UpdateFileList();
+                            ////**********************////
+
 
                             //uia
 
@@ -215,5 +240,14 @@ namespace TestSmartProject.ViewModel
             return sotaPaket;
         }
 
+        async void UpdateFileList()
+        {
+            // получаем все файлы
+            await DependencyService.Get<ILogFile>().GetFilesAsync();
+            // снимаем выделение
+            //filesList.SelectedItem = null;
+        }
+
     }
 }
+

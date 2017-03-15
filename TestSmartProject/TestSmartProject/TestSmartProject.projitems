@@ -13,6 +13,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\DataSota.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ILogFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserMainPage.xaml.cs">
       <DependentUpon>UserMainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
