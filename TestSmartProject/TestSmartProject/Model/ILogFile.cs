@@ -12,5 +12,6 @@ namespace TestSmartProject.Model
         Task<string> LoadTextAsync(string filename);  // загрузка текста из файла
         Task<IEnumerable<string>> GetFilesAsync();  // получение файлов из определнного каталога
         Task DeleteAsync(string filename);  // удаление файла
+
     }
 }
