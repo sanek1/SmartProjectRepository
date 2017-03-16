@@ -13,7 +13,7 @@ namespace TestSmartProject.Droid
     public class LoggingSota : ILogFile
     {
 
-        public Task DeleteAsync(string filename)
+        public Task DeleteAsync(string filename) 
         {
             // удаляем файл
             File.Delete(GetFilePath(filename));
